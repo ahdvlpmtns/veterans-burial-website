@@ -579,11 +579,8 @@
     display:grid; grid-template-columns:2fr 1fr 1fr; gap:64px;
     padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.05); margin-bottom:28px;
   }
-  .footer-logo img {
-    height:64px; width:auto; max-width:280px; object-fit:contain;
-    mix-blend-mode:screen; filter:brightness(1.2);
-    display:block; margin-bottom:16px;
-  }
+  .footer-logo { margin-bottom:20px; }
+  .footer-logo .logo { display:inline-flex; }
   .footer-about p { font-size:14px; color:rgba(255,255,255,0.35); line-height:1.8; font-weight:300; max-width:320px; }
   .footer-contact { margin-top:20px; display:flex; flex-direction:column; gap:6px; }
   .footer-contact a { color:var(--gold-light); font-size:14px; font-weight:600; text-decoration:none; }
@@ -1125,7 +1122,29 @@
   <div class="footer-top">
     <div class="footer-about">
       <div class="footer-logo">
-        <img src="logo-header.jpg" alt="Veterans Burial & Memorial Planning">
+        <a href="#top" class="logo" aria-label="Veterans Burial and Memorial Planning — back to top">
+          <svg class="logo-mark" aria-hidden="true" viewBox="0 0 64 64">
+            <defs>
+              <clipPath id="footer-logo-circle"><circle cx="32" cy="32" r="27"/></clipPath>
+            </defs>
+            <circle cx="32" cy="32" r="30" fill="#fff" stroke="#d8dce6" stroke-width="2"/>
+            <g clip-path="url(#footer-logo-circle)">
+              <rect x="5" y="5" width="54" height="54" fill="#fff"/>
+              <path d="M5 12h54M5 22h54M5 32h54M5 42h54M5 52h54" stroke="#c8102e" stroke-width="6"/>
+              <rect x="5" y="5" width="28" height="29" fill="#12356b"/>
+              <g fill="#fff">
+                <circle cx="12" cy="12" r="1.5"/><circle cx="21" cy="12" r="1.5"/><circle cx="29" cy="12" r="1.5"/>
+                <circle cx="12" cy="20" r="1.5"/><circle cx="21" cy="20" r="1.5"/><circle cx="29" cy="20" r="1.5"/>
+                <circle cx="12" cy="28" r="1.5"/><circle cx="21" cy="28" r="1.5"/><circle cx="29" cy="28" r="1.5"/>
+              </g>
+            </g>
+            <circle cx="32" cy="32" r="27" fill="none" stroke="#102c5c" stroke-width="2"/>
+          </svg>
+          <span class="logo-text">
+            <span class="logo-title">Veterans Burial</span>
+            <span class="logo-subtitle">Memorial Planning</span>
+          </span>
+        </a>
       </div>
       <p>Dedicated to honoring the service and life of our nation's heroes. Walking alongside more than 1,000 veterans and their families across Southern California with dignity and compassion.</p>
       <div class="footer-contact">
