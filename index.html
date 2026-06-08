@@ -473,6 +473,35 @@
   .footer-bottom a { font-size:12px; color:rgba(255,255,255,0.18); text-decoration:none; }
   .footer-bottom a:hover { color:rgba(255,255,255,0.5); }
 
+  /* ── PRIVACY POLICY ── */
+  .privacy-policy {
+    background:var(--cream); padding:96px 32px;
+    scroll-margin-top:80px;
+  }
+  .privacy-content {
+    max-width:760px; margin:0 auto;
+    color:var(--text); line-height:1.75;
+  }
+  .privacy-content h2 {
+    font-family:'Playfair Display', serif;
+    font-size:clamp(32px, 4vw, 46px); font-weight:500;
+    color:var(--navy); margin-bottom:8px;
+  }
+  .privacy-content h3 {
+    font-family:'Playfair Display', serif;
+    font-size:22px; font-weight:500; color:var(--navy);
+    margin:32px 0 10px;
+  }
+  .privacy-content p, .privacy-content li {
+    font-size:15px; color:var(--text-muted);
+  }
+  .privacy-content ul { margin:10px 0 0 22px; }
+  .privacy-content .effective-date {
+    color:var(--gold); font-weight:600; margin-bottom:32px;
+  }
+  .privacy-content address { font-style:normal; color:var(--text-muted); }
+  .privacy-content a { color:var(--gold); font-weight:600; }
+
   /* ── MOBILE ── */
   /* ── HAMBURGER MENU ── */
   .hamburger {
@@ -885,6 +914,63 @@
 </section>
 
 <!-- FOOTER -->
+<section class="privacy-policy" id="privacy-policy">
+  <div class="privacy-content">
+    <h2>Privacy Policy</h2>
+    <p class="effective-date">Effective Date: January 28, 2026</p>
+    <p>Veterans Burial &amp; Memorial Planning respects your privacy and is committed to protecting your personal information.</p>
+
+    <h3>1. Information We Collect</h3>
+    <p>We may collect:</p>
+    <ul>
+      <li>Name</li>
+      <li>Phone number</li>
+      <li>Email address</li>
+      <li>Veteran status-related information (as voluntarily provided)</li>
+      <li>Website usage data (cookies and analytics)</li>
+    </ul>
+
+    <h3>2. How We Use Information</h3>
+    <p>We use your information to:</p>
+    <ul>
+      <li>Provide planning assistance</li>
+      <li>Respond to inquiries</li>
+      <li>Communicate service-related updates</li>
+      <li>Improve our website and services</li>
+    </ul>
+
+    <h3>3. Information Sharing</h3>
+    <p>We do not sell your personal information. We may share information only with:</p>
+    <ul>
+      <li>Service providers assisting us</li>
+      <li>Legal authorities when required by law</li>
+    </ul>
+
+    <h3>4. Cookies &amp; Tracking</h3>
+    <p>Our website may use cookies and analytics tools to improve user experience. You may disable cookies through your browser settings.</p>
+
+    <h3>5. Data Security</h3>
+    <p>We implement reasonable safeguards to protect your information. However, no system is 100% secure.</p>
+
+    <h3>6. Your Rights</h3>
+    <p>You may request access, correction, or deletion of your personal data by contacting us.</p>
+
+    <h3>7. Children&rsquo;s Privacy</h3>
+    <p>Our services are not intended for individuals under 18 years of age.</p>
+
+    <h3>8. Changes to This Policy</h3>
+    <p>We may update this Privacy Policy periodically. Updates will be reflected by the effective date.</p>
+
+    <h3>9. Contact Us</h3>
+    <address>
+      Veterans Burial &amp; Memorial Planning<br>
+      2980 Inland Empire Blvd., Suite 112<br>
+      Ontario, CA 91764<br>
+      <a href="tel:+19515767044">951-576-7044</a>
+    </address>
+  </div>
+</section>
+
 <footer>
   <div class="footer-top">
     <div class="footer-about">
@@ -912,13 +998,13 @@
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#faqs">FAQs</a></li>
         <li><a href="tel:+19515767044">Schedule an Appointment</a></li>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="#privacy-policy">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Veterans Burial & Memorial Planning. All rights reserved. Serving Southern California.</p>
-    <a href="privacy-policy.html">Privacy Policy</a>
+    <a href="#privacy-policy">Privacy Policy</a>
   </div>
 </footer>
 
