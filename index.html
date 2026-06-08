@@ -7,6 +7,7 @@
 <meta name="description" content="Serving over 1,000 veteran families across Southern California. Expert VA burial benefits navigation, military funeral honors, and national cemetery pre-registration.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
 <style>
   :root {
     --navy:       #0c1a35;
@@ -32,21 +33,24 @@
   }
 
   /* ── SCROLL ANIMATIONS ── */
-  .reveal {
+  .reveal, .reveal-left, .reveal-right {
+    opacity:1; transform:none;
+  }
+  .js .reveal {
     opacity:0; transform:translateY(36px);
     transition:opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1);
   }
-  .reveal.visible { opacity:1; transform:translateY(0); }
-  .reveal-left {
+  .js .reveal.visible { opacity:1; transform:translateY(0); }
+  .js .reveal-left {
     opacity:0; transform:translateX(-36px);
     transition:opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1);
   }
-  .reveal-left.visible { opacity:1; transform:translateX(0); }
-  .reveal-right {
+  .js .reveal-left.visible { opacity:1; transform:translateX(0); }
+  .js .reveal-right {
     opacity:0; transform:translateX(36px);
     transition:opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1);
   }
-  .reveal-right.visible { opacity:1; transform:translateX(0); }
+  .js .reveal-right.visible { opacity:1; transform:translateX(0); }
   .delay-1 { transition-delay:0.1s; }
   .delay-2 { transition-delay:0.22s; }
   .delay-3 { transition-delay:0.34s; }
@@ -187,6 +191,13 @@
   }
   .btn-primary:hover { background:var(--gold-light); transform:translateY(-2px); box-shadow:0 8px 28px rgba(184,134,11,0.45); }
   .btn-primary:hover::after { transform:translateX(100%); }
+  .btn-secondary {
+    display:inline-flex; align-items:center; justify-content:center;
+    color:var(--white); border:1px solid rgba(255,255,255,0.45);
+    text-decoration:none; padding:15px 28px; border-radius:2px;
+    font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase;
+  }
+  .hero-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
 
   /* Stat card — floats over the right side of the hero photo */
   .hero-card {
@@ -407,12 +418,14 @@
   /* ── FAQS ── */
   .faqs { background:var(--cream-dark); }
   .faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:0 64px; margin-top:60px; }
-  .faq-item { border-bottom:1px solid rgba(0,0,0,0.08); padding:26px 0; cursor:pointer; }
+  .faq-item { border-bottom:1px solid rgba(0,0,0,0.08); padding:26px 0; }
   .faq-item:first-child { border-top:1px solid rgba(0,0,0,0.08); }
   .faq-q {
     font-size:16px; font-weight:600; color:var(--navy);
     display:flex; justify-content:space-between; align-items:flex-start;
     gap:16px; line-height:1.45; transition:color 0.2s;
+    width:100%; border:0; background:none; padding:0; text-align:left;
+    font-family:inherit; cursor:pointer;
   }
   .faq-item:hover .faq-q { color:var(--gold); }
   .faq-icon { color:var(--gold); font-size:22px; font-weight:300; flex-shrink:0; line-height:1.1; transition:transform 0.25s; }
@@ -473,40 +486,11 @@
   .footer-bottom a { font-size:12px; color:rgba(255,255,255,0.18); text-decoration:none; }
   .footer-bottom a:hover { color:rgba(255,255,255,0.5); }
 
-  /* ── PRIVACY POLICY ── */
-  .privacy-policy {
-    background:var(--cream); padding:96px 32px;
-    scroll-margin-top:80px;
-  }
-  .privacy-content {
-    max-width:760px; margin:0 auto;
-    color:var(--text); line-height:1.75;
-  }
-  .privacy-content h2 {
-    font-family:'Playfair Display', serif;
-    font-size:clamp(32px, 4vw, 46px); font-weight:500;
-    color:var(--navy); margin-bottom:8px;
-  }
-  .privacy-content h3 {
-    font-family:'Playfair Display', serif;
-    font-size:22px; font-weight:500; color:var(--navy);
-    margin:32px 0 10px;
-  }
-  .privacy-content p, .privacy-content li {
-    font-size:15px; color:var(--text-muted);
-  }
-  .privacy-content ul { margin:10px 0 0 22px; }
-  .privacy-content .effective-date {
-    color:var(--gold); font-weight:600; margin-bottom:32px;
-  }
-  .privacy-content address { font-style:normal; color:var(--text-muted); }
-  .privacy-content a { color:var(--gold); font-weight:600; }
-
   /* ── MOBILE ── */
   /* ── HAMBURGER MENU ── */
   .hamburger {
     display:none; flex-direction:column; gap:5px; cursor:pointer;
-    background:none; border:none; padding:4px;
+    background:none; border:none; padding:4px; position:relative;
   }
   .hamburger span {
     display:block; width:24px; height:2px; background:var(--white);
@@ -517,12 +501,14 @@
   .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
 
   .mobile-menu {
-    display:none; position:fixed; top:80px; left:0; right:0; bottom:0;
-    background:rgba(12,26,53,0.98); z-index:199;
+    display:flex; position:fixed; top:80px; left:0; right:0; bottom:0;
+    background:var(--navy); z-index:240;
     flex-direction:column; align-items:center; justify-content:center; gap:40px;
     backdrop-filter:blur(16px);
+    opacity:0; visibility:hidden; transform:translateY(-12px);
+    transition:opacity 0.25s, visibility 0.25s, transform 0.25s;
   }
-  .mobile-menu.open { display:flex; }
+  .mobile-menu.open { opacity:1; visibility:visible; transform:translateY(0); }
   .mobile-menu a {
     color:var(--white); text-decoration:none; font-size:22px;
     font-family:'Playfair Display', serif; font-weight:400;
@@ -534,6 +520,20 @@
     font-size:14px !important; padding:16px 36px !important;
     font-family:'DM Sans', sans-serif !important;
     font-weight:600 !important;
+  }
+  body.menu-open { overflow:hidden; }
+  .mobile-action-bar { display:none; }
+
+  @media(prefers-reduced-motion:reduce) {
+    html { scroll-behavior:auto; }
+    *, *::before, *::after {
+      animation-duration:0.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:0.01ms !important;
+    }
+    .js .reveal, .js .reveal-left, .js .reveal-right {
+      opacity:1; transform:none;
+    }
   }
 
   /* ── TABLET (max 920px) ── */
@@ -553,48 +553,63 @@
 
   /* ── MOBILE (max 640px) — full mobile-first treatment ── */
   @media(max-width:640px) {
+    body { padding-bottom:68px; }
     /* Header */
-    .header-inner { padding:0 20px; }
+    .header-inner { padding:0 18px; height:72px; }
     .nav-links { display:none; }
     .hamburger { display:flex; }
-    .logo img { height:56px; }
+    .hamburger { min-width:44px; min-height:44px; align-items:center; justify-content:center; }
+    .hamburger span { position:absolute; left:10px; }
+    .hamburger span:nth-child(1) { top:14px; }
+    .hamburger span:nth-child(2) { top:21px; }
+    .hamburger span:nth-child(3) { top:28px; }
+    .hamburger.open span:nth-child(1) { top:21px; transform:rotate(45deg); }
+    .hamburger.open span:nth-child(3) { top:21px; transform:rotate(-45deg); }
+    .logo img { height:46px; max-width:150px; }
+    .mobile-menu { top:72px; }
 
     /* Hero — single column, tighter padding */
     .hero-inner {
       grid-template-columns:1fr;
-      padding:100px 20px 56px;
-      gap:36px;
+      padding:104px 20px 42px;
+      gap:26px;
     }
-    .hero h1 { font-size:36px; line-height:1.15; margin-bottom:18px; }
-    .hero-desc { font-size:16px; margin-bottom:32px; }
+    .hero { min-height:auto; }
+    .hero h1 { font-size:35px; line-height:1.14; margin-bottom:16px; }
+    .hero-desc { font-size:16px; line-height:1.65; margin-bottom:26px; color:rgba(255,255,255,0.82); }
+    .hero-eyebrow { margin-bottom:18px; letter-spacing:2.2px; }
+    .hero-actions { display:grid; grid-template-columns:1fr; gap:10px; }
     .btn-primary { width:100%; text-align:center; padding:16px 24px; font-size:13px; }
+    .btn-secondary { width:100%; padding:14px 20px; }
 
-    /* Stat card — vertical stack on mobile */
-    .hero-card { padding:28px 22px; }
-    .stat-item { padding:18px 0; }
-    .stat-num { font-size:36px; }
-    .stat-label { font-size:13px; }
+    /* Compact trust stats on mobile */
+    .hero-card { padding:20px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+    .stat-item { padding:0 8px; border-bottom:0; border-right:1px solid rgba(255,255,255,0.1); }
+    .stat-item:last-child { border-right:0; padding-bottom:0; }
+    .stat-num { font-size:27px; }
+    .stat-label { font-size:10px; line-height:1.35; color:rgba(255,255,255,0.72); }
 
     /* Trust bar — 2 columns on mobile */
-    .trust-bar { padding:14px 16px; }
+    .trust-bar { padding:12px 16px; overflow:hidden; }
     .trust-bar-inner {
-      display:grid; grid-template-columns:1fr 1fr;
-      gap:10px 16px; justify-items:start;
+      display:flex; flex-wrap:nowrap; justify-content:flex-start;
+      gap:18px; overflow-x:auto; scrollbar-width:none;
     }
-    .trust-item { font-size:11px; }
+    .trust-bar-inner::-webkit-scrollbar { display:none; }
+    .trust-item { font-size:11px; min-width:max-content; }
 
     /* Sections */
-    section { padding:56px 20px; }
+    section { padding:48px 20px; }
     .section-title { font-size:28px; }
 
     /* VA Banner */
     .va-inner { grid-template-columns:1fr; gap:36px; }
     .va-left h2 { font-size:28px; }
     .va-left p { font-size:15px; }
-    .va-grid { grid-template-columns:1fr 1fr; gap:12px; }
-    .va-card { padding:18px 16px; }
-    .va-card-title { font-size:13px; }
-    .va-card-desc { font-size:12px; }
+    .va-grid { grid-template-columns:1fr; gap:12px; }
+    .va-card { padding:18px; }
+    .va-card-title { font-size:14px; }
+    .va-card-desc { font-size:13px; color:rgba(255,255,255,0.68); }
 
     /* How it works */
     .steps { grid-template-columns:1fr; gap:28px; }
@@ -631,6 +646,24 @@
     /* Footer */
     .footer-top { grid-template-columns:1fr; gap:32px; }
     .footer-bottom { flex-direction:column; align-items:flex-start; gap:8px; }
+    footer { padding-bottom:36px; }
+
+    .mobile-action-bar {
+      display:grid; grid-template-columns:0.8fr 1.6fr;
+      position:fixed; left:0; right:0; bottom:0; z-index:230;
+      padding:8px 12px; gap:8px;
+      background:rgba(7,16,31,0.97);
+      border-top:1px solid rgba(184,134,11,0.28);
+      backdrop-filter:blur(12px);
+    }
+    .mobile-action-bar a {
+      min-height:50px; display:flex; align-items:center; justify-content:center;
+      text-decoration:none; border-radius:3px; font-size:12px;
+      font-weight:600; letter-spacing:0.7px; text-transform:uppercase;
+    }
+    .mobile-call { color:var(--white); border:1px solid rgba(255,255,255,0.32); }
+    .mobile-schedule { color:var(--white); background:var(--gold); }
+    body.menu-open .mobile-action-bar { display:none; }
   }
 </style>
 </head>
@@ -648,7 +681,7 @@
       <a href="#faqs">FAQs</a>
       <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-nav">Schedule an Appointment</a>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -677,8 +710,9 @@
       <div class="hero-eyebrow"><span></span>Honoring Those Who Served</div>
       <h1>You Served.<br>Now Let Us<br><em>Honor</em> Your Legacy.</h1>
       <p class="hero-desc">We walk alongside Southern California veterans and their families every step of the way — navigating VA burial benefits, military funeral honors, and national cemetery coordination so you can focus on what matters most.</p>
-      <div class="hero-cta">
+      <div class="hero-cta hero-actions">
         <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary">Schedule an Appointment</a>
+        <a href="tel:+19515767044" class="btn-secondary">Call (951) 576-7044</a>
       </div>
     </div>
     <div class="hero-card">
@@ -872,30 +906,30 @@
     <div class="faq-grid">
       <div>
         <div class="faq-item">
-          <div class="faq-q">Who is eligible for military funeral honors? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Military funeral honors are available to active duty members, military retirees, members of the Selected Reserve, and eligible U.S. veterans of any war. We help verify eligibility for every veteran we work with. Just reach out and we will walk you through it.</div>
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-1">Who is eligible for military funeral honors? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-a" id="faq-answer-1">Military funeral honors are available to active duty members, military retirees, members of the Selected Reserve, and eligible U.S. veterans of any war. We help verify eligibility for every veteran we work with. Just reach out and we will walk you through it.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">How can I make sure my wishes are honored? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Through our pre-planning services, every detail of your burial wishes can be documented and securely filed. When the time comes your family will not have to wonder. Everything will be in place exactly as you intended.</div>
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-2">How can I make sure my wishes are honored? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-a" id="faq-answer-2">Through our pre-planning services, every detail of your burial wishes can be documented and securely filed. When the time comes your family will not have to wonder. Everything will be in place exactly as you intended.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">Do you also serve non-military family members? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Yes. We extend our services to non-military family members of veterans as well providing the same level of care, respect, and diligence to every person we serve.</div>
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-3">Do you also serve non-military family members? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-a" id="faq-answer-3">Yes. We extend our services to non-military family members of veterans as well providing the same level of care, respect, and diligence to every person we serve.</div>
         </div>
       </div>
       <div>
         <div class="faq-item">
-          <div class="faq-q">Can you help with burials in national cemeteries? <span class="faq-icon">+</span></div>
-          <div class="faq-a">Absolutely. We arrange burial in any national cemetery with available space throughout Southern California and handle all pre-registration paperwork on behalf of your family so you do not have to navigate that process alone.</div>
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-4">Can you help with burials in national cemeteries? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-a" id="faq-answer-4">Absolutely. We arrange burial in any national cemetery with available space throughout Southern California and handle all pre-registration paperwork on behalf of your family so you do not have to navigate that process alone.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">How does your team handle VA benefits? <span class="faq-icon">+</span></div>
-          <div class="faq-a">We assist in navigating and filing for all veterans burial and memorial benefits making sure you and your family receive every honor and benefit that was earned. Our team knows the process inside and out so you do not have to.</div>
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-5">How does your team handle VA benefits? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-a" id="faq-answer-5">We assist in navigating and filing for all veterans burial and memorial benefits making sure you and your family receive every honor and benefit that was earned. Our team knows the process inside and out so you do not have to.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-q">What if I am not sure where to start? <span class="faq-icon">+</span></div>
-          <div class="faq-a">That is exactly why we are here. Schedule an appointment and we will guide you through every step from understanding what benefits are available to coordinating all final arrangements. You do not have to figure this out alone.</div>
+          <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-answer-6">What if I am not sure where to start? <span class="faq-icon" aria-hidden="true">+</span></button>
+          <div class="faq-a" id="faq-answer-6">That is exactly why we are here. Schedule an appointment and we will guide you through every step from understanding what benefits are available to coordinating all final arrangements. You do not have to figure this out alone.</div>
         </div>
       </div>
     </div>
@@ -914,63 +948,6 @@
 </section>
 
 <!-- FOOTER -->
-<section class="privacy-policy" id="privacy-policy">
-  <div class="privacy-content">
-    <h2>Privacy Policy</h2>
-    <p class="effective-date">Effective Date: January 28, 2026</p>
-    <p>Veterans Burial &amp; Memorial Planning respects your privacy and is committed to protecting your personal information.</p>
-
-    <h3>1. Information We Collect</h3>
-    <p>We may collect:</p>
-    <ul>
-      <li>Name</li>
-      <li>Phone number</li>
-      <li>Email address</li>
-      <li>Veteran status-related information (as voluntarily provided)</li>
-      <li>Website usage data (cookies and analytics)</li>
-    </ul>
-
-    <h3>2. How We Use Information</h3>
-    <p>We use your information to:</p>
-    <ul>
-      <li>Provide planning assistance</li>
-      <li>Respond to inquiries</li>
-      <li>Communicate service-related updates</li>
-      <li>Improve our website and services</li>
-    </ul>
-
-    <h3>3. Information Sharing</h3>
-    <p>We do not sell your personal information. We may share information only with:</p>
-    <ul>
-      <li>Service providers assisting us</li>
-      <li>Legal authorities when required by law</li>
-    </ul>
-
-    <h3>4. Cookies &amp; Tracking</h3>
-    <p>Our website may use cookies and analytics tools to improve user experience. You may disable cookies through your browser settings.</p>
-
-    <h3>5. Data Security</h3>
-    <p>We implement reasonable safeguards to protect your information. However, no system is 100% secure.</p>
-
-    <h3>6. Your Rights</h3>
-    <p>You may request access, correction, or deletion of your personal data by contacting us.</p>
-
-    <h3>7. Children&rsquo;s Privacy</h3>
-    <p>Our services are not intended for individuals under 18 years of age.</p>
-
-    <h3>8. Changes to This Policy</h3>
-    <p>We may update this Privacy Policy periodically. Updates will be reflected by the effective date.</p>
-
-    <h3>9. Contact Us</h3>
-    <address>
-      Veterans Burial &amp; Memorial Planning<br>
-      2980 Inland Empire Blvd., Suite 112<br>
-      Ontario, CA 91764<br>
-      <a href="tel:+19515767044">951-576-7044</a>
-    </address>
-  </div>
-</section>
-
 <footer>
   <div class="footer-top">
     <div class="footer-about">
@@ -998,24 +975,34 @@
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#faqs">FAQs</a></li>
         <li><a href="tel:+19515767044">Schedule an Appointment</a></li>
-        <li><a href="#privacy-policy">Privacy Policy</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <p>© 2026 Veterans Burial & Memorial Planning. All rights reserved. Serving Southern California.</p>
-    <a href="#privacy-policy">Privacy Policy</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
   </div>
 </footer>
 
+<div class="mobile-action-bar" aria-label="Quick actions">
+  <a class="mobile-call" href="tel:+19515767044">Call Now</a>
+  <a class="mobile-schedule" href="https://appointments.veteransburialplanning.com/schedule-page-6572">Schedule</a>
+</div>
+
 <script>
 // Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-  });
-}, { threshold:0.1 });
-document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold:0.08, rootMargin:'0px 0px 80px' });
+  revealElements.forEach(el => observer.observe(el));
+} else {
+  revealElements.forEach(el => el.classList.add('visible'));
+}
 
 // Header shadow on scroll
 const header = document.getElementById('site-header');
@@ -1023,12 +1010,42 @@ window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive:true });
 
+// Mobile navigation
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMobileMenu = () => {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+  hamburger.setAttribute('aria-label', 'Open menu');
+  document.body.classList.remove('menu-open');
+};
+hamburger.addEventListener('click', () => {
+  const willOpen = !mobileMenu.classList.contains('open');
+  hamburger.classList.toggle('open', willOpen);
+  mobileMenu.classList.toggle('open', willOpen);
+  hamburger.setAttribute('aria-expanded', String(willOpen));
+  hamburger.setAttribute('aria-label', willOpen ? 'Close menu' : 'Open menu');
+  document.body.classList.toggle('menu-open', willOpen);
+});
+document.querySelectorAll('.mobile-menu a').forEach(link => link.addEventListener('click', closeMobileMenu));
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeMobileMenu();
+});
+
 // FAQ accordion
 document.querySelectorAll('.faq-item').forEach(item => {
-  item.addEventListener('click', () => {
+  const button = item.querySelector('.faq-q');
+  button.addEventListener('click', () => {
     const isOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item.open').forEach(o => o.classList.remove('open'));
-    if (!isOpen) item.classList.add('open');
+    document.querySelectorAll('.faq-item.open').forEach(openItem => {
+      openItem.classList.remove('open');
+      openItem.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      button.setAttribute('aria-expanded', 'true');
+    }
   });
 });
 
