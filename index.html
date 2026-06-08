@@ -68,15 +68,24 @@
 
   .header-inner {
     max-width:1200px; margin:0 auto; padding:0 32px;
-    height:80px; display:flex; align-items:center; justify-content:space-between;
+    height:88px; display:flex; align-items:center; justify-content:space-between;
   }
 
   /* Logo: mix-blend-mode:screen makes the black bg invisible on dark header */
-  .logo { display:flex; align-items:center; text-decoration:none; }
+  .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
   .logo img {
-    height:52px; width:auto; object-fit:contain;
+    height:62px; width:62px; object-fit:contain; border-radius:50%;
     mix-blend-mode:screen;
-    filter:brightness(1.1) contrast(1.05);
+    filter:brightness(1.2) contrast(1.08);
+  }
+  .logo-text { display:flex; flex-direction:column; line-height:1; }
+  .logo-title {
+    color:var(--white); font-size:17px; font-weight:600;
+    letter-spacing:0.8px; text-transform:uppercase;
+  }
+  .logo-subtitle {
+    color:#ef6f78; font-size:10px; font-weight:600;
+    letter-spacing:2.4px; text-transform:uppercase; margin-top:7px;
   }
 
   .nav-links { display:flex; align-items:center; gap:32px; }
@@ -465,8 +474,8 @@
     padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,0.05); margin-bottom:28px;
   }
   .footer-logo img {
-    height:52px; width:auto; object-fit:contain;
-    mix-blend-mode:screen; filter:brightness(1.1);
+    height:64px; width:auto; max-width:280px; object-fit:contain;
+    mix-blend-mode:screen; filter:brightness(1.2);
     display:block; margin-bottom:16px;
   }
   .footer-about p { font-size:14px; color:rgba(255,255,255,0.35); line-height:1.8; font-weight:300; max-width:320px; }
@@ -555,7 +564,7 @@
   @media(max-width:640px) {
     body { padding-bottom:68px; }
     /* Header */
-    .header-inner { padding:0 18px; height:72px; }
+    .header-inner { padding:0 18px; height:80px; }
     .nav-links { display:none; }
     .hamburger { display:flex; }
     .hamburger { min-width:44px; min-height:44px; align-items:center; justify-content:center; }
@@ -565,13 +574,16 @@
     .hamburger span:nth-child(3) { top:28px; }
     .hamburger.open span:nth-child(1) { top:21px; transform:rotate(45deg); }
     .hamburger.open span:nth-child(3) { top:21px; transform:rotate(-45deg); }
-    .logo img { height:46px; max-width:150px; }
-    .mobile-menu { top:72px; }
+    .logo { gap:7px; }
+    .logo img { height:52px; width:52px; }
+    .logo-title { font-size:12px; letter-spacing:0.35px; }
+    .logo-subtitle { font-size:7px; letter-spacing:1.2px; margin-top:5px; }
+    .mobile-menu { top:80px; }
 
     /* Hero — single column, tighter padding */
     .hero-inner {
       grid-template-columns:1fr;
-      padding:104px 20px 42px;
+      padding:112px 20px 42px;
       gap:26px;
     }
     .hero { min-height:auto; }
@@ -673,7 +685,11 @@
 <header id="site-header">
   <div class="header-inner">
     <a href="#top" class="logo" aria-label="Back to top">
-      <img src="logo.png" alt="Veterans Burial & Memorial Planning">
+      <img src="logo-mark.jpg" alt="">
+      <span class="logo-text">
+        <span class="logo-title">Veterans Burial</span>
+        <span class="logo-subtitle">Memorial Planning</span>
+      </span>
     </a>
     <nav class="nav-links">
       <a href="#services">Services</a>
@@ -952,7 +968,7 @@
   <div class="footer-top">
     <div class="footer-about">
       <div class="footer-logo">
-        <img src="logo.png" alt="Veterans Burial & Memorial Planning">
+        <img src="logo-header.jpg" alt="Veterans Burial & Memorial Planning">
       </div>
       <p>Dedicated to honoring the service and life of our nation's heroes. Walking alongside more than 1,000 veterans and their families across Southern California with dignity and compassion.</p>
       <div class="footer-contact">
