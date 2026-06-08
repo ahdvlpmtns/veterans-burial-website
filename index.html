@@ -5,8 +5,76 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Veterans Burial & Memorial Planning | Southern California</title>
 <meta name="description" content="Serving over 1,000 veteran families across Southern California. Expert VA burial benefits navigation, military funeral honors, and national cemetery pre-registration.">
+<link rel="canonical" href="https://veteransburialplanning.com/">
+<meta name="theme-color" content="#0c1a35">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://veteransburialplanning.com/">
+<meta property="og:title" content="Veterans Burial & Memorial Planning | Southern California">
+<meta property="og:description" content="Compassionate guidance for VA burial benefits, military funeral honors, pre-planning, and national cemetery coordination.">
+<meta property="og:image" content="https://veteransburialplanning.com/hero-family.png">
+<meta property="og:image:alt" content="A veteran and family honoring a legacy at sunset">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Veterans Burial & Memorial Planning">
+<meta name="twitter:description" content="Guidance for veterans and families navigating burial benefits, honors, and pre-planning.">
+<meta name="twitter:image" content="https://veteransburialplanning.com/hero-family.png">
+<link rel="icon" href="logo-mark.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://veteransburialplanning.com/#business",
+      "name": "Veterans Burial & Memorial Planning",
+      "url": "https://veteransburialplanning.com/",
+      "telephone": "+1-951-576-7044",
+      "image": "https://veteransburialplanning.com/logo-mark.jpg",
+      "description": "Veteran-focused burial and memorial planning serving Southern California.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2980 Inland Empire Blvd., Suite 112",
+        "addressLocality": "Ontario",
+        "addressRegion": "CA",
+        "postalCode": "91764",
+        "addressCountry": "US"
+      },
+      "areaServed": "Southern California"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is eligible for military funeral honors?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Military funeral honors are available to active duty members, military retirees, members of the Selected Reserve, and eligible U.S. veterans. Veterans Burial & Memorial Planning helps families verify eligibility."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I make sure my wishes are honored?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pre-planning allows burial wishes to be documented and securely filed so family members have clear guidance when the time comes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can you help with burials in national cemeteries?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The team assists with eligibility, pre-registration paperwork, and coordination for national cemeteries with available space."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 <script>document.documentElement.classList.add('js');</script>
 <style>
   :root {
@@ -73,11 +141,7 @@
 
   /* Logo: mix-blend-mode:screen makes the black bg invisible on dark header */
   .logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
-  .logo img {
-    height:62px; width:62px; object-fit:contain; border-radius:50%;
-    mix-blend-mode:screen;
-    filter:brightness(1.2) contrast(1.08);
-  }
+  .logo-mark { width:62px; height:62px; flex:0 0 auto; }
   .logo-text { display:flex; flex-direction:column; line-height:1; }
   .logo-title {
     color:var(--white); font-size:17px; font-weight:600;
@@ -207,6 +271,12 @@
     font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase;
   }
   .hero-actions { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .cta-reassurance {
+    display:flex; align-items:center; gap:8px;
+    color:rgba(255,255,255,0.72); font-size:12px;
+    margin-top:14px; letter-spacing:0.2px;
+  }
+  .cta-reassurance svg { width:16px; height:16px; color:var(--gold-light); flex:0 0 auto; }
 
   /* Stat card — floats over the right side of the hero photo */
   .hero-card {
@@ -294,7 +364,13 @@
     transition:background 0.25s, border-color 0.25s, transform 0.25s;
   }
   .va-card:hover { background:rgba(255,255,255,0.11); border-color:rgba(184,134,11,0.5); transform:translateY(-3px); }
-  .va-card-icon  { font-size:22px; margin-bottom:10px; }
+  .va-card-icon {
+    width:42px; height:42px; margin-bottom:12px;
+    display:flex; align-items:center; justify-content:center;
+    border-radius:50%; color:var(--gold-light);
+    background:rgba(212,160,23,0.12);
+  }
+  .va-card-icon svg, .svc-icon svg { width:23px; height:23px; }
   .va-card-title { font-size:14px; font-weight:600; color:var(--white); margin-bottom:6px; }
   .va-card-desc  { font-size:13px; color:rgba(255,255,255,0.45); line-height:1.6; }
 
@@ -350,7 +426,7 @@
   .svc-icon {
     width:50px; height:50px; background:var(--gold-pale); border-radius:50%;
     display:flex; align-items:center; justify-content:center;
-    font-size:22px; margin-bottom:20px;
+    color:var(--gold); margin-bottom:20px;
   }
   .svc-title {
     font-family:'Playfair Display', serif;
@@ -465,6 +541,36 @@
   .cta > div > p { font-size:18px; color:rgba(255,255,255,0.55); margin-bottom:44px; font-weight:300; position:relative; }
   .cta .btn-primary { font-size:14px; padding:18px 48px; position:relative; }
   .cta-note { font-size:13px; color:rgba(255,255,255,0.3); margin-top:20px; position:relative; }
+  .cta .cta-reassurance { justify-content:center; margin-top:16px; }
+
+  /* ── TRUST ASSURANCE ── */
+  .assurance { background:var(--cream); padding:72px 32px; }
+  .assurance-grid {
+    max-width:1200px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px;
+  }
+  .assurance-item {
+    background:var(--white); border:1px solid var(--border);
+    border-radius:6px; padding:28px;
+    display:grid; grid-template-columns:48px 1fr; gap:16px;
+    box-shadow:0 12px 34px rgba(12,26,53,0.05);
+  }
+  .assurance-icon {
+    width:48px; height:48px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--gold); background:var(--gold-pale);
+  }
+  .assurance-icon svg { width:24px; height:24px; }
+  .assurance-item h3 {
+    font-family:'Playfair Display', serif; font-size:19px;
+    color:var(--navy); font-weight:500; margin-bottom:8px;
+  }
+  .assurance-item p { color:var(--text-muted); font-size:14px; line-height:1.65; }
+  .va-disclaimer {
+    max-width:1200px; margin:18px auto 0; text-align:center;
+    color:var(--text-muted); font-size:12px; line-height:1.6;
+  }
+  .va-disclaimer a { color:var(--gold); font-weight:600; }
 
   /* ── FOOTER ── */
   footer { background:#07101f; padding:64px 32px 28px; }
@@ -553,6 +659,7 @@
     .steps { grid-template-columns:1fr; gap:32px; }
     .step-line { display:none; }
     .services-grid { grid-template-columns:1fr 1fr; }
+    .assurance-grid { grid-template-columns:1fr; }
     .quote-break { height:320px; }
     .t-grid  { grid-template-columns:1fr; }
     .faq-grid { grid-template-columns:1fr; }
@@ -575,7 +682,7 @@
     .hamburger.open span:nth-child(1) { top:21px; transform:rotate(45deg); }
     .hamburger.open span:nth-child(3) { top:21px; transform:rotate(-45deg); }
     .logo { gap:7px; }
-    .logo img { height:52px; width:52px; }
+    .logo-mark { height:52px; width:52px; }
     .logo-title { font-size:12px; letter-spacing:0.35px; }
     .logo-subtitle { font-size:7px; letter-spacing:1.2px; margin-top:5px; }
     .mobile-menu { top:80px; }
@@ -593,6 +700,7 @@
     .hero-actions { display:grid; grid-template-columns:1fr; gap:10px; }
     .btn-primary { width:100%; text-align:center; padding:16px 24px; font-size:13px; }
     .btn-secondary { width:100%; padding:14px 20px; }
+    .cta-reassurance { justify-content:center; font-size:11px; }
 
     /* Compact trust stats on mobile */
     .hero-card { padding:20px; display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
@@ -634,6 +742,9 @@
     .svc-card { padding:32px 24px; }
     .svc-title { font-size:19px; }
     .svc-desc { font-size:15px; }
+    .assurance { padding:44px 20px; }
+    .assurance-item { padding:22px 18px; grid-template-columns:42px 1fr; }
+    .assurance-icon { width:42px; height:42px; }
 
     /* Quote break */
     .quote-break { height:280px; }
@@ -685,7 +796,23 @@
 <header id="site-header">
   <div class="header-inner">
     <a href="#top" class="logo" aria-label="Back to top">
-      <img src="logo-mark.jpg" alt="">
+      <svg class="logo-mark" aria-hidden="true" viewBox="0 0 64 64">
+        <defs>
+          <clipPath id="logo-circle"><circle cx="32" cy="32" r="27"/></clipPath>
+        </defs>
+        <circle cx="32" cy="32" r="30" fill="#fff" stroke="#d8dce6" stroke-width="2"/>
+        <g clip-path="url(#logo-circle)">
+          <rect x="5" y="5" width="54" height="54" fill="#fff"/>
+          <path d="M5 12h54M5 22h54M5 32h54M5 42h54M5 52h54" stroke="#c8102e" stroke-width="6"/>
+          <rect x="5" y="5" width="28" height="29" fill="#12356b"/>
+          <g fill="#fff">
+            <circle cx="12" cy="12" r="1.5"/><circle cx="21" cy="12" r="1.5"/><circle cx="29" cy="12" r="1.5"/>
+            <circle cx="16" cy="20" r="1.5"/><circle cx="25" cy="20" r="1.5"/>
+            <circle cx="12" cy="28" r="1.5"/><circle cx="21" cy="28" r="1.5"/><circle cx="29" cy="28" r="1.5"/>
+          </g>
+        </g>
+        <circle cx="32" cy="32" r="27" fill="none" stroke="#102c5c" stroke-width="2"/>
+      </svg>
       <span class="logo-text">
         <span class="logo-title">Veterans Burial</span>
         <span class="logo-subtitle">Memorial Planning</span>
@@ -695,7 +822,7 @@
       <a href="#services">Services</a>
       <a href="#how-it-works">How It Works</a>
       <a href="#faqs">FAQs</a>
-      <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-nav">Schedule an Appointment</a>
+      <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-nav" data-cta="desktop-nav">Schedule an Appointment</a>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -708,7 +835,7 @@
   <a href="#services" class="mobile-nav-link">Services</a>
   <a href="#how-it-works" class="mobile-nav-link">How It Works</a>
   <a href="#faqs" class="mobile-nav-link">FAQs</a>
-  <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary">Schedule an Appointment</a>
+  <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary" data-cta="mobile-menu">Schedule an Appointment</a>
 </div>
 
 <!-- HERO
@@ -727,9 +854,13 @@
       <h1>You Served.<br>Now Let Us<br><em>Honor</em> Your Legacy.</h1>
       <p class="hero-desc">We walk alongside Southern California veterans and their families every step of the way — navigating VA burial benefits, military funeral honors, and national cemetery coordination so you can focus on what matters most.</p>
       <div class="hero-cta hero-actions">
-        <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary">Schedule an Appointment</a>
+        <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary" data-cta="hero-schedule">Schedule an Appointment</a>
         <a href="tel:+19515767044" class="btn-secondary">Call (951) 576-7044</a>
       </div>
+      <p class="cta-reassurance">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+        Free, no-pressure planning conversation
+      </p>
     </div>
     <div class="hero-card">
       <div class="stat-item">
@@ -759,6 +890,30 @@
   </div>
 </div>
 
+<section class="assurance" aria-label="Why families choose us">
+  <div class="assurance-grid">
+    <article class="assurance-item reveal">
+      <div class="assurance-icon">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 7v5c0 5 3.4 7.9 8 9 4.6-1.1 8-4 8-9V7l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+      </div>
+      <div><h3>Veteran-Focused Guidance</h3><p>Every conversation centers on the service, wishes, and benefits of veterans and their families.</p></div>
+    </article>
+    <article class="assurance-item reveal delay-1">
+      <div class="assurance-icon">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h10v18H7z"/><path d="M9.5 8h5M9.5 12h5M9.5 16h3"/><path d="m9 3 1-2h4l1 2"/></svg>
+      </div>
+      <div><h3>Clear, Documented Plans</h3><p>We help organize wishes and paperwork so families are not left searching for answers later.</p></div>
+    </article>
+    <article class="assurance-item reveal delay-2">
+      <div class="assurance-icon">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2-7 4 14 2-7h6"/><path d="M5 20h14"/></svg>
+      </div>
+      <div><h3>Calm, Personal Support</h3><p>No pressure and no rushed decisions. We guide each family at a pace that feels comfortable.</p></div>
+    </article>
+  </div>
+  <p class="va-disclaimer">Independent planning assistance. Veterans Burial &amp; Memorial Planning is not affiliated with the U.S. Department of Veterans Affairs. Learn about official benefits at <a href="https://www.va.gov/burials-memorials/" target="_blank" rel="noopener">VA.gov</a>.</p>
+</section>
+
 <!-- VA BENEFITS
      Background: flag at sunset (sharp).
      A veteran earned these benefits by serving under that flag.
@@ -771,26 +926,26 @@
       <div class="section-label" style="color:var(--gold-light);">What Many Veterans Don't Know</div>
       <h2>The Benefits You <em>Earned</em><br>Are Waiting for You</h2>
       <p>As a veteran, you are entitled to burial and memorial benefits through the VA including burial in a national cemetery, a government headstone, a burial flag, and a Presidential Memorial Certificate. We help you access every benefit you have earned.</p>
-      <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary">See What You Qualify For</a>
+      <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary" data-cta="benefits-qualification">See What You Qualify For</a>
     </div>
     <div class="va-grid reveal-right">
       <div class="va-card">
-        <div class="va-card-icon">🏛️</div>
+        <div class="va-card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-5 9 5"/><path d="M5 10h14M6 10v7m4-7v7m4-7v7m4-7v7M4 20h16"/></svg></div>
         <div class="va-card-title">National Cemetery Burial</div>
         <div class="va-card-desc">Burial in any national cemetery with available space throughout Southern California</div>
       </div>
       <div class="va-card">
-        <div class="va-card-icon">🪖</div>
+        <div class="va-card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 15a8 8 0 0 1 16 0v2H4v-2Z"/><path d="M12 7v10M4 20h16"/></svg></div>
         <div class="va-card-title">Military Funeral Honors</div>
         <div class="va-card-desc">Flag presentation ceremony and full military honors for eligible veterans</div>
       </div>
       <div class="va-card">
-        <div class="va-card-icon">📋</div>
+        <div class="va-card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4h10v17H7z"/><path d="M9 4V2h6v2M10 9h4m-4 4h4m-4 4h3"/></svg></div>
         <div class="va-card-title">Pre-Planning Services</div>
         <div class="va-card-desc">Document your wishes now so your family has clarity and peace of mind later</div>
       </div>
       <div class="va-card">
-        <div class="va-card-icon">📁</div>
+        <div class="va-card-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h7l2 2h9v11H3z"/><path d="M3 10h18"/></svg></div>
         <div class="va-card-title">VA Paperwork Filing</div>
         <div class="va-card-desc">We handle all government forms and filings from start to finish on your behalf</div>
       </div>
@@ -841,17 +996,17 @@
     </div>
     <div class="services-grid">
       <div class="svc-card reveal delay-1">
-        <div class="svc-icon">🎖️</div>
+        <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="14" r="5"/><path d="m9 9-3-6h4l2 4 2-4h4l-3 6M10 14l1.3 1.3L14 12.5"/></svg></div>
         <div class="svc-title">Military Funeral Honors</div>
         <p class="svc-desc">We coordinate the full military burial honors ceremony for all eligible veterans including the ceremonial folding and presentation of the American flag and bugle honors so your service is recognized with the dignity it deserves.</p>
       </div>
       <div class="svc-card reveal delay-2">
-        <div class="svc-icon">📋</div>
+        <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 4h10v17H7z"/><path d="M9 4V2h6v2M10 9h4m-4 4h4m-4 4h3"/></svg></div>
         <div class="svc-title">Pre-Planning Services</div>
         <p class="svc-desc">Pre-planning is one of the most meaningful steps you can take for the people you care about. We help document every detail of your wishes which we securely file so nothing is left uncertain when the time comes.</p>
       </div>
       <div class="svc-card reveal delay-3">
-        <div class="svc-icon">🏛️</div>
+        <div class="svc-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m3 9 9-5 9 5"/><path d="M5 10h14M6 10v7m4-7v7m4-7v7m4-7v7M4 20h16"/></svg></div>
         <div class="svc-title">National Cemetery Registration</div>
         <p class="svc-desc">We handle pre-registration at any national cemetery with available space throughout Southern California and beyond including all eligibility verification and coordination so your family does not have to figure it out alone.</p>
       </div>
@@ -868,7 +1023,7 @@
      The quote grounds the emotion before the personal stories begin.
 -->
 <div class="quote-break">
-  <img src="cemetery.jpg" alt="Veterans national cemetery at sunrise" class="quote-break-img">
+  <img src="cemetery.jpg" alt="Veterans national cemetery at sunrise" class="quote-break-img" loading="lazy" decoding="async">
   <div class="quote-break-overlay">
     <div class="quote-break-inner reveal">
       <blockquote>
@@ -958,8 +1113,11 @@
   <div class="reveal">
     <h2>You Earned These Honors.<br>Let Us Make Sure You Receive Them.</h2>
     <p>Over 1,000 Southern California veterans and their families have trusted us to handle every detail with care.</p>
-    <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary">Schedule an Appointment</a>
-    <p class="cta-note">We are here to guide you and your family every step of the way.</p>
+    <a href="https://appointments.veteransburialplanning.com/schedule-page-6572" class="btn-primary" data-cta="closing-schedule">Schedule an Appointment</a>
+    <p class="cta-reassurance">
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>
+      Free conversation. No pressure. Clear next steps.
+    </p>
   </div>
 </section>
 
@@ -991,6 +1149,7 @@
         <li><a href="#how-it-works">How It Works</a></li>
         <li><a href="#faqs">FAQs</a></li>
         <li><a href="tel:+19515767044">Schedule an Appointment</a></li>
+        <li><a href="https://www.va.gov/burials-memorials/" target="_blank" rel="noopener">Official VA Resources</a></li>
         <li><a href="privacy-policy.html">Privacy Policy</a></li>
       </ul>
     </div>
@@ -1003,7 +1162,7 @@
 
 <div class="mobile-action-bar" aria-label="Quick actions">
   <a class="mobile-call" href="tel:+19515767044">Call Now</a>
-  <a class="mobile-schedule" href="https://appointments.veteransburialplanning.com/schedule-page-6572">Schedule</a>
+  <a class="mobile-schedule" href="https://appointments.veteransburialplanning.com/schedule-page-6572" data-cta="sticky-mobile">Schedule</a>
 </div>
 
 <script>
@@ -1065,33 +1224,18 @@ document.querySelectorAll('.faq-item').forEach(item => {
   });
 });
 
-// Animated stat counters
-const statObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (!e.isIntersecting) return;
-    e.target.querySelectorAll('.stat-num').forEach(n => {
-      const t = n.textContent.trim();
-      if (t === '1,000+') {
-        let v = 0;
-        const timer = setInterval(() => {
-          v = Math.min(v + 13, 1000);
-          n.textContent = v.toLocaleString() + (v >= 1000 ? '+' : '');
-          if (v >= 1000) clearInterval(timer);
-        }, 18);
-      } else if (t === '100%') {
-        let v = 0;
-        const timer = setInterval(() => {
-          v = Math.min(v + 2, 100);
-          n.textContent = v + '%';
-          if (v >= 100) clearInterval(timer);
-        }, 18);
-      }
+// Conversion tracking hook. Works with Google Tag Manager or any dataLayer listener.
+window.dataLayer = window.dataLayer || [];
+document.querySelectorAll('[data-cta]').forEach(link => {
+  link.addEventListener('click', () => {
+    window.dataLayer.push({
+      event:'appointment_cta_click',
+      cta_location:link.dataset.cta,
+      destination:link.href
     });
-    statObs.unobserve(e.target);
   });
-}, { threshold:0.5 });
-const heroCard = document.querySelector('.hero-card');
-if (heroCard) statObs.observe(heroCard);
+});
+document.documentElement.dataset.trackingReady = 'true';
 
 // Parallax-lite for quote break image
 const qImg = document.querySelector('.quote-break-img');
